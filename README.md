@@ -1,14 +1,24 @@
-This is just a quick little implementation of [Delaunay Triangulation][1] in
-JavaScript. It was mostly ported from [Paul Bourke's C implementation][2], but
-I referenced some bits from [another JavaScript implementation][3] and rewrote
-a bunch of things in ways more amenable to fast JavaScript execution.
+Voronoi Terrain Generation Tool
+===============================
 
-[1]: http://en.wikipedia.org/wiki/Delaunay_triangulation
-[2]: http://paulbourke.net/papers/triangulate/
-[3]: http://www.travellermap.com/tmp/delaunay.htm
+This is a fork from ironwallaby's delaunay project. For more information about
+the delaunay generator check out his project at: https://github.com/ironwallaby/delaunay
 
-Notably, it runs in subquadratic time, making it the fastest JavaScript
-implementation of which I'm aware. (Okay, it doesn't really, but it'd be
-trivial to modify to run in subquadratic time, I just havn't done so yet.)
+I'll be working on this project and try to turn it into a real 2D/3D Terrain Generator Tool
+and maybe add some exporters later so terrains generated with this program can be used
+on any other language.
 
-This software is released into the public domain.
+But in the meantime it is just what it is, a simple 2D Delaunay generator based on a bunch
+of random points.
+
+I encapsulated the functions into a Delaunay class to make its usage a bit
+simplier, you can create a new Delaunay Triangulation just by doing:
+
+```javascript
+var d = new Delaunay($("#delaunay")[0]);
+d.generateRandomVertices(2048);
+d.triangulate();
+d.render();
+```
+
+Hope you find this useful!
