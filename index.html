@@ -6,8 +6,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	var d = new Delaunay($("#delaunay")[0]);
-	d.generateRandomVertices(2048);
+	d.generateRandomVertices(1024);
+	d.generateDistributedVertices(32, 32);
 	d.triangulate();
+	d.renderVertices();
 	d.render();
 });
 </script>
